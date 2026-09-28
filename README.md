@@ -1,3 +1,3 @@
 # ascii-video
 
-Converts video into ASCII art
+Takes live webcam feed and converts it into ascii text.
