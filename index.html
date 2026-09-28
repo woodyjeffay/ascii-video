@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ASCII Art</title>
+  <title>Ascii-ify me</title>
   <style>
     body {
       background: #111;
@@ -24,8 +24,6 @@
       max-width: 100%;
       height: auto;
     }
-    /* The webcam feed has to be on the page to play reliably,
-       but we only want the ASCII version to be seen */
     #video {
       position: absolute;
       width: 1px;
@@ -39,7 +37,6 @@
   <h1>ASCII Art</h1>
 
   <div class="controls">
-    <input type="file" id="upload" accept="image/*">
     <button id="webcam">Start webcam</button>
     <label>
       Width
@@ -47,10 +44,14 @@
       <span id="widthValue">100</span>
     </label>
     <label>
-      <input type="checkbox" id="colour" checked>
+      <input type="checkbox" id="colour">
       Colour
     </label>
-    <button id="download" disabled>Download PNG</button>
+    <label>
+      <input type="color" id="colourChoice" value="#ffffff">
+      Or choose a colour
+    </label>
+
   </div>
 
   <canvas id="output"></canvas>
