@@ -1,3 +1,3 @@
 # ascii-video
 
-Converts video to ASCII
+Converts video into ASCII art
