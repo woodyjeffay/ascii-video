@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASCII Art</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 16px;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    /* The webcam feed has to be on the page to play reliably,
+       but we only want the ASCII version to be seen */
+    #video {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>ASCII Art</h1>
+
+  <div class="controls">
+    <input type="file" id="upload" accept="image/*">
+    <button id="webcam">Start webcam</button>
+    <label>
+      Width
+      <input type="range" id="width" min="40" max="250" value="100">
+      <span id="widthValue">100</span>
+    </label>
+    <label>
+      <input type="checkbox" id="colour" checked>
+      Colour
+    </label>
+    <button id="download" disabled>Download PNG</button>
+  </div>
+
+  <canvas id="output"></canvas>
+  <video id="video" playsinline muted></video>
+
+  <script src="script.js"></script>
+</body>
+</html>
